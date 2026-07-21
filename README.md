@@ -11,24 +11,26 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
-
+My music recommender recommends songs based on a user's musical preferences. It compares features such as genre, mood, energy, and tempo to find songs that best match the user's preferred vibe. Each song receives a score, and the songs with the highest scores are recommended first.
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+Real-world recommendation systems use information about users and content to predict what someone might enjoy. Collaborative filtering uses the behavior of similar users, such as likes, skips, saves, and playlists. Content-based filtering uses features of the content itself. My recommender will use a simple content-based approach by comparing each song's features with the user's preferences.
 
-Some prompts to answer:
+The Song will use:
+- Genre
+- Mood
+- Energy
+- Tempo BPM
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+The UserProfile will store:
+- Preferred genre
+- Preferred mood
+- Preferred energy
+- Preferred tempo
 
-You can include a simple diagram or bullet list if helpful.
-
+The recommender will give more importance to mood, followed by genre and energy, while tempo will have a smaller influence. For energy and tempo, songs with values closer to the user's preferred values will receive higher scores. After every song receives a score, the recommender will rank the songs from highest to lowest and recommend the best matches first.
 ---
 
 ## Getting Started
