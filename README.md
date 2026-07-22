@@ -31,6 +31,30 @@ The UserProfile will store:
 - Preferred tempo
 
 The recommender will give more importance to mood, followed by genre and energy, while tempo will have a smaller influence. For energy and tempo, songs with values closer to the user's preferred values will receive higher scores. After every song receives a score, the recommender will rank the songs from highest to lowest and recommend the best matches first.
+
+### Example User Profile
+
+- Favorite genre: lofi
+- Favorite mood: chill
+- Target energy: 0.40
+- Target tempo: 80 BPM
+
+### Algorithm Recipe
+
+- Genre match: +3 points
+- Mood match: +4 points
+- Energy similarity: up to +2 points based on how close the song's energy is to the user's target.
+- Tempo similarity: up to +1 point based on how close the song's tempo is to the user's target.
+
+Each song can receive a maximum score of 10 points. After every song is scored, the recommender sorts the songs from highest score to lowest score and recommends the best matches.
+
+### Data Flow
+
+User Preferences → Compare Each Song → Calculate Score → Rank Songs → Return Top Recommendations
+
+### Potential Bias
+
+This recommender may over-prioritize exact genre and mood matches. As a result, it could overlook songs from different genres that still have a similar energy, tempo, or overall vibe.
 ---
 
 ## Getting Started
