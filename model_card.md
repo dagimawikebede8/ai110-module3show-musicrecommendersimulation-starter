@@ -61,14 +61,7 @@ Prompts:
 
 ## 6. Limitations and Bias 
 
-Where the system struggles or behaves unfairly. 
-
-Prompts:  
-
-- Features it does not consider  
-- Genres or moods that are underrepresented  
-- Cases where the system overfits to one preference  
-- Ways the scoring might unintentionally favor some users  
+One limitation of my recommender is that it depends heavily on the weights I choose. During my experiment, increasing the energy weight caused songs with similar energy levels to receive high scores even when their genre or mood did not match the user. The small song dataset also limits the variety of recommendations and could cause users to keep seeing similar types of songs. The Sad but High-Energy profile showed this weakness because the system could not find a song that matched all of the user's preferences. A larger dataset with more genres, moods, and song features could make the recommendations more balanced.
 
 ---
 
